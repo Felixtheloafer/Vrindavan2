@@ -96,7 +96,7 @@ exec node server/index.js
 
   await write(
     "start.bat",
-    `@echo off\r\ncd /d "%~dp0"\r\nwhere node >nul 2>nul || (echo Radha needs Node.js 20 or newer: https://nodejs.org & pause & exit /b 1)\r\nstart "" http://127.0.0.1:8787\r\nnode server/index.js\r\npause\r\n`,
+    `@echo off\r\ncd /d "%~dp0"\r\nwhere node >nul 2>nul || (echo Radha needs Node.js 20 or newer: https://nodejs.org & pause & exit /b 1)\r\nstart "Radha Agent" cmd /k "node server/index.js"\r\ntimeout /t 2 /nobreak >nul\r\nstart "" http://127.0.0.1:8787\r\n`,
   );
 
   await write(
