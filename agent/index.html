@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2a0711" />
+    <meta name="description" content="Radha — a local-first AI companion with memory, tools and an optional cloud mind." />
+    <title>Radha · Your Vrindavan Agent</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <span class="glow glow-a"></span>
+      <span class="glow glow-b"></span>
+      <span class="grain"></span>
+    </div>
+
+    <div id="app" class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Primary">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" role="presentation">
+              <path d="M20 3c2.6 7.6 7.2 11.2 15 13-7.8 1.8-12.4 5.4-15 13-2.6-7.6-7.2-11.2-15-13 7.8-1.8 12.4-5.4 15-13Z" />
+              <circle cx="20" cy="33" r="2.2" />
+            </svg>
+          </div>
+          <div>
+            <p class="brand-name">Radha</p>
+            <p class="brand-sub">Vrindavan Agent</p>
+          </div>
+          <button class="icon-btn sidebar-close" id="sidebar-close" aria-label="Close menu">×</button>
+        </div>
+
+        <button class="btn btn-primary new-chat" id="new-chat">
+          <span class="btn-glyph">✧</span> Begin a new thread
+        </button>
+
+        <nav class="nav" aria-label="Workspace">
+          <button class="nav-item is-active" data-view="chat">
+            <span class="nav-icon">◍</span><span>Conversation</span>
+          </button>
+          <button class="nav-item" data-view="memory">
+            <span class="nav-icon">❖</span><span>Memory</span><span class="nav-count" id="memory-count">0</span>
+          </button>
+          <button class="nav-item" data-view="brain">
+            <span class="nav-icon">✺</span><span>Brain &amp; Knowledge</span>
+          </button>
+          <button class="nav-item" data-view="studio">
+            <span class="nav-icon">▷</span><span>Studio</span>
+          </button>
+          <button class="nav-item" data-view="settings">
+            <span class="nav-icon">⚙</span><span>Settings</span>
+          </button>
+        </nav>
+
+        <div class="threads-block">
+          <div class="section-label">
+            <span>Recent threads</span>
+            <button class="text-btn" id="clear-threads" title="Clear local thread list">clear</button>
+          </div>
+          <div class="thread-list" id="thread-list"></div>
+        </div>
+
+        <div class="sidebar-foot">
+          <div class="presence-row">
+            <span class="pulse" id="presence-dot"></span>
+            <div>
+              <p class="presence-title" id="presence-title">Listening for a local mind</p>
+              <p class="presence-sub" id="presence-sub">Ollama · LM Studio · Cloud</p>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-small" id="download-agent">Download this agent</button>
+          <p class="fineprint">Runs on your machine. Your keys stay here.</p>
+        </div>
+      </aside>
+
+      <main class="main-stage">
+        <header class="topbar">
+          <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
+          <div class="topbar-title">
+            <p class="eyebrow" id="view-eyebrow">In conversation</p>
+            <h1 id="view-title">Radha</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="model-pill" id="model-pill" title="Change mind">
+              <span class="dot" id="model-dot"></span>
+
+        <section class="view is-active" id="view-chat" aria-label="Conversation">
+          <div class="setup-banner" id="setup-banner" hidden>
+            <div class="setup-mark" aria-hidden="true">✦</div>
+            <div class="setup-copy">
+              <p class="setup-title">She needs a mind before she can speak.</p>
+              <p class="setup-text">Run a local model — nothing leaves this machine — or connect a cloud key. <code>ollama pull llama3.1:8b &amp;&amp; ollama serve</code></p>
+            </div>
+            <div class="setup-actions">
+              <button class="btn btn-ghost btn-small" id="copy-ollama">Copy command</button>
+              <button class="btn btn-primary btn-small" id="setup-settings">Choose a mind</button>
+            </div>
+          </div>
+          <div class="transcript" id="transcript" aria-live="polite"></div>
+          <div class="composer-wrap">
+            <div class="suggestions" id="suggestions"></div>
+            <form class="composer" id="composer">
+              <textarea id="prompt" rows="1" placeholder="Speak with Radha… ask for a plan, code, or a story." aria-label="Message"></textarea>
+              <div class="composer-tools">
+                <button type="button" class="icon-btn" id="mic" title="Dictate">◉</button>
+                <span class="composer-hint" id="composer-hint">Enter to send · Shift + Enter for a new line</span>
+                <button type="submit" class="send-btn" id="send" aria-label="Send">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-4 16-4-7-8-1Z" /></svg>
+                </button>
+              </div>
+            </form>
+            <p class="disclaimer">Radha is an AI. She remembers what you choose to keep — nothing leaves this machine unless you connect a cloud mind.</p>
+          </div>
+        </section>
+
+        <section class="view" id="view-memory" aria-label="Memory">
+          <div class="view-scroll">
+            <div class="page-head">
+              <p class="eyebrow">The living ledger</p>
+              <h2>What she carries for you</h2>
+              <p class="lede">Facts, preferences and promises. Retrieval is local and inspectable; you can remove anything, always.</p>
+            </div>
+            <div class="stat-row">
+              <div class="stat"><span id="stat-memory">0</span><small>memories</small></div>
+              <div class="stat"><span id="stat-knowledge">0</span><small>knowledge pages</small></div>
+              <div class="stat"><span id="stat-threads">0</span><small>threads kept</small></div>
+            </div>
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Add a lasting memory</h3>
+                <span class="tag">local only</span>
+              </div>
+              <form id="memory-form" class="stack">
+                <textarea id="memory-text" rows="3" placeholder="e.g. I work from a Dell laptop on Linux and prefer answers with exact commands." required></textarea>
+                <div class="row">
+                  <select id="memory-kind" aria-label="Memory kind">
+                    <option value="fact">Fact</option>
+                    <option value="preference">Preference</option>
+                    <option value="project">Project</option>
+                    <option value="promise">Promise</option>
+                  </select>
+                  <button class="btn btn-primary" type="submit">Keep this</button>
+                </div>
+              </form>
+            </div>
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Recall</h3>
+                <div class="search-mini"><input id="memory-search" type="search" placeholder="Search memories…" /></div>
+              </div>
+              <div id="memory-list" class="memory-list"></div>
+            </div>
+          </div>
+        </section>
+
+              <span id="model-label">Auto · local first</span>
+              <span class="chev">⌄</span>
+            </button>
+            <button class="icon-btn" id="voice-toggle" aria-label="Toggle spoken replies" title="Speak replies">◔</button>
+            <button class="icon-btn presence-toggle" id="presence-toggle" aria-label="Toggle presence panel">☾</button>
+
+        <section class="view" id="view-brain" aria-label="Brain and knowledge">
+          <div class="view-scroll">
+            <div class="page-head">
+              <p class="eyebrow">The Phani lineage</p>
+              <h2>A brain with rooms</h2>
+              <p class="lede">Working memory, episodic memory, curated knowledge and a reflective planner. V3 and V9 imports become first-class knowledge packs.</p>
+            </div>
+            <div class="brain-grid" id="brain-grid">
+              <article class="brain-card" data-pack="v3">
+                <div class="brain-card-top"><span class="roman">III</span><span class="tag" id="v3-status">not imported</span></div>
+                <h3>AI Brain</h3>
+                <p class="brain-sub">Phani V3 · reasoning, planning, recall</p>
+                <p>Drop in the exported instructions, notes or files from your private V3 project. Radha indexes them and consults them before answering.</p>
+                <div class="row">
+                  <button class="btn btn-ghost import-pack" data-pack="v3">Import V3</button>
+                  <span class="fineprint" id="v3-count">0 pages</span>
+                </div>
+              </article>
+              <article class="brain-card" data-pack="v9">
+                <div class="brain-card-top"><span class="roman">IX</span><span class="tag" id="v9-status">not imported</span></div>
+                <h3>AI Video</h3>
+                <p class="brain-sub">Phani V9 · story, shotcraft, production</p>
+                <p>Import your video playbook. Studio then uses it to shape concepts, scripts, shot lists, prompts and edit notes.</p>
+                <div class="row">
+                  <button class="btn btn-ghost import-pack" data-pack="v9">Import V9</button>
+                  <span class="fineprint" id="v9-count">0 pages</span>
+                </div>
+              </article>
+            </div>
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Persona &amp; operating principles</h3>
+                <button class="btn btn-ghost btn-small" id="save-persona">Save persona</button>
+              </div>
+              <p class="fineprint">This is Radha's system prompt. Keep her warm, direct, and honest about what she can verify.</p>
+              <textarea id="persona-editor" class="mono" rows="14" spellcheck="false"></textarea>
+            </div>
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Knowledge library</h3>
+                <button class="btn btn-primary btn-small" id="add-knowledge">Add a page</button>
+              </div>
+              <div id="knowledge-list" class="knowledge-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-studio" aria-label="Video studio">
+          <div class="view-scroll">
+            <div class="page-head">
+              <p class="eyebrow">Phani V9 · studio</p>
+              <h2>From a feeling to a film</h2>
+              <p class="lede">A director's desk. Radha turns a brief into a concept, script, shot list and generation prompts — grounded in your imported V9 playbook.</p>
+            </div>
+            <div class="studio-grid">
+              <div class="panel">
+                <div class="panel-head"><h3>The brief</h3><span class="tag">90 seconds or less</span></div>
+                <form id="studio-form" class="stack">
+                  <label class="field"><span>Feeling / subject</span><textarea id="studio-idea" rows="3" placeholder="A woman in a maroon sari remembers a city she has never visited…" required></textarea></label>
+                  <div class="grid-2">
+                    <label class="field"><span>Duration</span><select id="studio-duration"><option>15s</option><option selected>30s</option><option>60s</option><option>90s</option></select></label>
+                    <label class="field"><span>Aspect</span><select id="studio-aspect"><option>9:16 vertical</option><option selected>16:9 cinematic</option><option>1:1 square</option></select></label>
+                  </div>
+                  <label class="field"><span>Visual language</span><input id="studio-style" value="Painterly, candlelit, maroon and antique gold, shallow depth of field" /></label>
+                  <button class="btn btn-primary" type="submit">Compose the treatment</button>
+                </form>
+              </div>
+              <div class="panel studio-output">
+                <div class="panel-head"><h3>Treatment</h3><button class="text-btn" id="copy-studio">copy</button></div>
+                <div id="studio-result" class="prose empty-note">Your treatment will appear here, ready to refine shot by shot.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="view" id="view-settings" aria-label="Settings">
+          <div class="view-scroll">
+            <div class="page-head">
+              <p class="eyebrow">Sovereignty, by design</p>
+              <h2>Choose her mind</h2>
+              <p class="lede">Local models run entirely on this machine. Cloud models are optional, per-provider, and keys never reach the browser.</p>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Mind routing</h3><span class="tag" id="health-tag">checking…</span></div>
+              <label class="switch-row">
+                <span><strong>Local first</strong><small>Try Ollama, then LM Studio, then a cloud mind. If the network is gone, she stays home.</small></span>
+                <input type="checkbox" id="cfg-auto" checked />
+              </label>
+              <div class="grid-2">
+                <label class="field"><span>Local provider</span>
+                  <select id="cfg-local-provider">
+                    <option value="ollama">Ollama</option>
+                    <option value="lmstudio">LM Studio / OpenAI-compatible</option>
+                    <option value="llamacpp">llama.cpp server</option>
+                  </select>
+                </label>
+                <label class="field"><span>Local base URL</span><input id="cfg-local-url" value="http://127.0.0.1:11434" /></label>
+                <label class="field"><span>Local model</span><input id="cfg-local-model" value="llama3.1:8b" /></label>
+                <label class="field"><span>Temperature</span><input id="cfg-temperature" type="number" min="0" max="2" step="0.1" value="0.7" /></label>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Cloud fallback</h3><span class="tag">optional</span></div>
+              <div class="grid-2">
+                <label class="field"><span>Provider</span>
+                  <select id="cfg-cloud-provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="openrouter">OpenRouter</option>
+                    <option value="groq">Groq</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="gemini">Google Gemini</option>
+                  </select>
+                </label>
+                <label class="field"><span>Model</span><input id="cfg-cloud-model" value="gpt-4o-mini" /></label>
+                <label class="field span-2"><span>API key <small>stored in data/config.json on this machine</small></span><input id="cfg-api-key" type="password" autocomplete="off" placeholder="not set" /></label>
+              </div>
+              <p class="fineprint" id="key-state">No cloud key is stored. Radha will use your local model only.</p>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Access &amp; cloud hosting</h3><button class="btn btn-ghost btn-small" id="copy-host">copy host command</button></div>
+              <p class="fineprint">Run on a server with <code>HOST=0.0.0.0 AGENT_ACCESS_TOKEN=… npm run agent</code>, then reach it over HTTPS through a reverse proxy. Never expose the raw port.</p>
+              <label class="switch-row"><span><strong>Allow workspace tools</strong><small>Read and write files inside data/workspace only.</small></span><input type="checkbox" id="cfg-tools" checked /></label>
+              <label class="switch-row"><span><strong>Allow network fetch</strong><small>Public http(s) pages only; private addresses are refused.</small></span><input type="checkbox" id="cfg-fetch" checked /></label>
+            </div>
+            <div class="row end">
+              <button class="btn btn-ghost" id="export-data">Export my data</button>
+              <button class="btn btn-primary" id="save-settings">Save settings</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+          </div>
+        </header>
+
+
+      <aside class="presence" id="presence" aria-label="Presence">
+        <div class="portrait-frame">
+          <img src="assets/radha.svg" alt="Original portrait illustration of Radha in a maroon sari with gold embroidery" />
+          <div class="portrait-caption">
+            <p class="eyebrow">Vrindavan · dusk</p>
+            <p class="portrait-name">Radha</p>
+            <p class="portrait-line">“Bring me a question, and we will sit with it until it opens.”</p>
+          </div>
+        </div>
+        <div class="presence-cards">
+          <div class="mini-card">
+            <p class="mini-label">Mind</p>
+            <p class="mini-value" id="presence-mind">Not yet chosen</p>
+            <p class="mini-sub" id="presence-mind-sub">Choose a local or cloud model</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-label">What she holds</p>
+            <p class="mini-value"><span id="presence-memory">0</span> memories</p>
+            <p class="mini-sub"><span id="presence-knowledge">0</span> knowledge pages</p>
+          </div>
+        </div>
+        <div class="quick-block">
+          <p class="section-label">Ask her to</p>
+          <button class="quick" data-quick="Map out my week so that the important work actually happens. Ask me what matters first.">Weave my week</button>
+          <button class="quick" data-quick="Read the files in your workspace and tell me what you find. Then propose the smallest useful next step.">Inspect my workspace</button>
+          <button class="quick" data-quick="Help me design a 30-second vertical film. Give me a concept, five shots, and the generation prompt for each.">Direct a short film</button>
+          <button class="quick" data-quick="Search your memory for what I care about, then ask me one question that would help you serve me better.">Remember me</button>
+        </div>
+        <p class="presence-foot">Built to run without a cloud.<br />Made for a life, not a demo.</p>
+      </aside>
+    </div>
+
+    <div class="toast-stack" id="toasts" aria-live="polite"></div>
+
+    <dialog class="modal" id="modal">
+      <form method="dialog" class="modal-card" id="modal-card">
+        <div class="modal-head">
+          <h3 id="modal-title">Add knowledge</h3>
+          <button class="icon-btn" value="cancel" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-actions" id="modal-actions"></div>
+      </form>
+    </dialog>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>

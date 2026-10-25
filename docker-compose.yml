@@ -1,0 +1,11 @@
+services:
+  radha:
+    build: .
+    ports:
+      - "127.0.0.1:8787:8787"
+    environment:
+      HOST: 0.0.0.0
+      AGENT_ACCESS_TOKEN: ${AGENT_ACCESS_TOKEN:?Set AGENT_ACCESS_TOKEN in .env or your shell}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

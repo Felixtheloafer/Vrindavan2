@@ -3,3 +3,12 @@ dist
 .DS_Store
 *.local
 .vite
+data/
+releases/
+.release/
+.pw-browsers/
+.libs/
+.debs/
+.apt/
+*-preview.png
+
