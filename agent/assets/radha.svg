@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Radha at dusk</title>
+  <desc id="desc">An original painterly portrait of a dark-haired woman in a deep maroon sari with antique gold embroidery, standing beneath a temple arch at dusk.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5d2a28"/>
+      <stop offset=".42" stop-color="#3c111a"/>
+      <stop offset="1" stop-color="#18050b"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".42" r=".5">
+      <stop offset="0" stop-color="#f3d9a0" stop-opacity=".5"/>
+      <stop offset=".55" stop-color="#d5a25f" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#d5a25f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#f4d5ba"/>
+      <stop offset=".5" stop-color="#e5b597"/>
+      <stop offset="1" stop-color="#bd8069"/>
+    </linearGradient>
+    <linearGradient id="skinShade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c98d76" stop-opacity="0"/>
+      <stop offset="1" stop-color="#a56050" stop-opacity=".45"/>
+    </linearGradient>
+    <linearGradient id="hair" x1=".2" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#4a2a20"/>
+      <stop offset=".35" stop-color="#2b1512"/>
+      <stop offset=".7" stop-color="#180b0b"/>
+      <stop offset="1" stop-color="#3a211b"/>
+    </linearGradient>
+    <linearGradient id="hairLight" x1="0" y1="0" x2="1" y2=".3">
+      <stop offset="0" stop-color="#8f5b3f" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#8f5b3f" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sari" x1="0" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#6b1226"/>
+      <stop offset=".45" stop-color="#4a0a19"/>
+      <stop offset="1" stop-color="#2a0510"/>
+    </linearGradient>
+    <linearGradient id="sariLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a12a3f" stop-opacity=".65"/>
+      <stop offset=".5" stop-color="#73152c" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2a0510" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="veil" x1="0" y1="0" x2=".7" y2="1">
+      <stop offset="0" stop-color="#7a1a2f"/>
+      <stop offset=".55" stop-color="#540d1e"/>
+      <stop offset="1" stop-color="#320714"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6e2b1"/>
+      <stop offset=".4" stop-color="#d7b06e"/>
+      <stop offset=".7" stop-color="#a97b39"/>
+      <stop offset="1" stop-color="#e5c485"/>
+    </linearGradient>
+    <linearGradient id="goldDim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9b778"/>
+      <stop offset="1" stop-color="#8a6026"/>
+    </linearGradient>
+    <radialGradient id="cheek" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#d97a76" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#d97a76" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="soft2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="jaali" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M21 2 40 21 21 40 2 21Z" fill="none" stroke="#d7b06e" stroke-opacity=".16" stroke-width="1"/>
+      <circle cx="21" cy="21" r="3" fill="#d7b06e" fill-opacity=".12"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="760" fill="url(#sky)"/>
+  <rect width="600" height="760" fill="url(#jaali)" opacity=".55"/>
+
+  <!-- distant city and arch -->
+  <g opacity=".55">
+    <path d="M0 455h52v-38h18v38h36V330q22-44 44 0v125h28v-62h22v62h46v-96h18v96h34V244q38-52 76 0v211h28v-92h24v92h54V390q20-30 40 0v65h36v-40h20v40h30v265H0Z" fill="#2a0a12"/>
+    <path d="M256 455V250c0-34 18-52 44-52s44 18 44 52v205" fill="none" stroke="#c9a15c" stroke-opacity=".4" stroke-width="1.4"/>
+    <path d="M270 455V258c0-26 13-40 30-40s30 14 30 40v197" fill="none" stroke="#c9a15c" stroke-opacity=".22" stroke-width="1"/>
+    <circle cx="300" cy="180" r="3" fill="#f0d9a4" opacity=".7"/>
+  </g>
+  <rect y="455" width="600" height="305" fill="#17050b" opacity=".88"/>
+  <ellipse cx="304" cy="330" rx="300" ry="310" fill="url(#halo)"/>
+
+  <!-- hanging lanterns -->
+  <g stroke="#c9a15c" stroke-opacity=".5" fill="none">
+    <path d="M74 0v42M526 0v62"/>
+    <path d="M60 42h28l8 34H52Z" fill="#d7b06e" fill-opacity=".12"/>
+    <path d="M512 62h28l7 30h-42Z" fill="#d7b06e" fill-opacity=".1"/>
+  </g>
+  <circle cx="74" cy="88" r="9" fill="#f3d9a0" opacity=".7" filter="url(#soft2)"/>
+  <circle cx="526" cy="104" r="7" fill="#f3d9a0" opacity=".5" filter="url(#soft2)"/>
+
+  <!-- hair, behind -->
+  <path d="M300 118C228 118 204 188 216 252c8 42 32 66 22 112-10 50-32 96-24 172 8 78-16 150-26 226h326c-22-92-36-158-48-228-12-70-20-108-16-162 4-58-18-92-10-154 8-72-40-126-140-126Z" fill="url(#hair)"/>
+  <path d="M236 186c-28 70-6 126-20 180-16 62-26 124-20 200" fill="none" stroke="url(#hairLight)" stroke-width="9" stroke-linecap="round" opacity=".6"/>
+  <path d="M404 174c24 66 10 126 22 186 14 68 28 136 38 210" fill="none" stroke="url(#hairLight)" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+
+  <!-- shoulders and sari -->
+  <path d="M300 372c-42 0-78 16-108 42-46 40-70 106-84 184-10 58-30 114-56 162h520c-24-54-40-112-50-170-14-84-38-142-80-180-32-26-72-38-142-38Z" fill="url(#sari)"/>
+  <path d="M300 372c-42 0-78 16-108 42-46 40-70 106-84 184-10 58-30 114-56 162h190c-20-70-24-146-28-220-4-72-6-118-14-168Z" fill="url(#sariLight)" opacity=".55"/>
+
+  <!-- blouse neckline -->
+  <path d="M262 384c16 42 30 86 38 140 8-54 22-98 38-140-16-10-34-16-58-16-6 0-12 5-18 16Z" fill="#2c0712"/>
+  <path d="M262 384c16 42 30 86 38 140 8-54 22-98 38-140" fill="none" stroke="url(#gold)" stroke-width="2.2" opacity=".85"/>
+
+  <!-- pallu across the body -->
+  <path d="M394 408c-28 30-52 78-62 140-12 74-8 152 10 212h150c-26-60-42-126-48-196-8-92-26-136-50-156Z" fill="url(#veil)"/>
+  <path d="M394 408c-28 30-52 78-62 140-12 74-8 152 10 212" fill="none" stroke="url(#gold)" stroke-width="3.2"/>
+  <path d="M404 420c-22 34-42 82-50 142-10 72-4 142 12 198" fill="none" stroke="url(#goldDim)" stroke-width="1" opacity=".7"/>
+
+  <!-- neck -->
+  <path d="M296 318v58c0 22 10 36 26 36s26-14 26-36v-58Z" fill="url(#skin)"/>
+  <path d="M296 330c14 14 38 14 52 0v-18h-52Z" fill="#a56552" opacity=".35" filter="url(#soft2)"/>
+
+  <!-- veil across the crown -->
+  <path d="M220 196c10-62 52-96 108-98 56-2 98 30 106 84-22-32-56-48-98-46-46 2-82 22-100 60Z" fill="url(#veil)" opacity=".96"/>
+  <path d="M220 196c10-62 52-96 108-98 56-2 98 30 106 84" fill="none" stroke="url(#gold)" stroke-width="1.6" opacity=".8"/>
+
+  <path d="M226 190c12-46 50-72 102-72 50 0 88 26 100 70" fill="none" stroke="url(#gold)" stroke-width="1.1" opacity=".55"/>
+  <g fill="url(#gold)" opacity=".55"><circle cx="246" cy="168" r="1.3"/><circle cx="274" cy="148" r="1.1"/><circle cx="308" cy="140" r="1.4"/><circle cx="344" cy="144" r="1.1"/><circle cx="376" cy="158" r="1.3"/><circle cx="404" cy="180" r="1.1"/></g>
+  <!-- veil falling on the left -->
+  <path d="M223 172c-24 34-34 70-30 112 4 46 22 82 16 136-6 58-28 118-46 192L118 760H0c26-132 58-246 78-342 22-102 64-158 96-204 18-26 32-56 49-42Z" fill="url(#veil)"/>
+  <path d="M223 172c-24 34-34 70-30 112 4 46 22 82 16 136-6 58-28 118-46 192L118 760" fill="none" stroke="url(#gold)" stroke-width="4"/>
+  <path d="M211 190c-20 34-26 70-22 108 4 42 20 76 14 124-6 54-26 110-42 180" fill="none" stroke="url(#goldDim)" stroke-width="1.2" opacity=".8"/>
+  <g fill="url(#gold)" opacity=".85">
+    <circle cx="206" cy="226" r="2.1"/><circle cx="196" cy="260" r="1.7"/><circle cx="190" cy="300" r="2.3"/>
+    <circle cx="200" cy="342" r="1.8"/><circle cx="192" cy="388" r="2.2"/><circle cx="178" cy="440" r="1.6"/>
+    <circle cx="164" cy="500" r="2.4"/><circle cx="146" cy="566" r="1.8"/><circle cx="128" cy="634" r="2.1"/>
+    <circle cx="108" cy="702" r="1.7"/>
+  </g>
+
+  <!-- face -->
+  <path d="M312 158c40-3 66 22 72 60 5 30 0 58-10 82-8 19-20 34-34 44-10 7-22 10-34 6-18-6-32-24-38-48-9-34-7-76 8-108 10-22 21-34 36-36Z" fill="url(#skin)"/>
+  <path d="M312 158c40-3 66 22 72 60 5 30 0 58-10 82-8 19-20 34-34 44-10 7-22 10-34 6-18-6-32-24-38-48-9-34-7-76 8-108 10-22 21-34 36-36Z" fill="url(#skinShade)" opacity=".7"/>
+
+  <!-- ears -->
+  <path d="M267 244c-8-3-14 2-13 11 1 10 9 20 17 23l6-16Z" fill="#dda98d"/>
+  <path d="M386 238c8-4 15 1 14 11-1 10-8 21-17 25l-6-17Z" fill="#dba68b"/>
+
+  <!-- forehead tilak -->
+  <path d="M314 196v40c0 11 7 17 14 17s14-6 14-17v-40" fill="none" stroke="#f8eedb" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M328 202v38" stroke="#b3263a" stroke-width="2.4" stroke-linecap="round"/>
+
+  <!-- brows and eyes -->
+  <path d="M286 230c10-8 23-9 32-3" fill="none" stroke="#5c3526" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M341 228c11-7 24-5 31 3" fill="none" stroke="#5c3526" stroke-width="2.4" stroke-linecap="round"/>
+  <g>
+    <path d="M291 245c5-6 18-7 25-1 3 3 2 6-2 8-8 4-19 1-23-7Z" fill="#fbf3e7"/>
+    <circle cx="305" cy="246" r="4.6" fill="#6d4424"/>
+    <circle cx="305" cy="246" r="2.1" fill="#1c0b06"/>
+    <circle cx="307" cy="244" r="1.2" fill="#fff" opacity=".9"/>
+    <path d="M289 244c6-8 20-9 28-2l4-2" fill="none" stroke="#331a12" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M291 241l-4-2M297 238l-2-3M304 237l-1-3" stroke="#331a12" stroke-width="1" stroke-linecap="round"/>
+  </g>
+  <g>
+    <path d="M340 242c6-7 19-7 25 0 2 3 0 6-4 8-9 3-19 0-21-8Z" fill="#fbf3e7"/>
+    <circle cx="353" cy="244" r="4.6" fill="#6d4424"/>
+    <circle cx="353" cy="244" r="2.1" fill="#1c0b06"/>
+    <circle cx="355" cy="242" r="1.2" fill="#fff" opacity=".9"/>
+    <path d="M338 240c6-8 20-8 28 0l-3 1" fill="none" stroke="#331a12" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M364 240l4-2M358 238l2-3" stroke="#331a12" stroke-width="1" stroke-linecap="round"/>
+  </g>
+
+  <!-- nose -->
+  <path d="M333 250c-2 14-5 25-9 32 3 5 10 6 16 4" fill="none" stroke="#b3735d" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M320 284c6 3 12 3 17 0" fill="none" stroke="#a4614f" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+
+  <!-- cheeks and lips -->
+  <ellipse cx="292" cy="281" rx="24" ry="17" fill="url(#cheek)"/>
+  <ellipse cx="363" cy="276" rx="22" ry="16" fill="url(#cheek)"/>
+  <path d="M324 303c6-2 14-2 20 1-2 7-7 12-11 12-5 0-9-6-9-13Z" fill="#a34e57"/>
+  <path d="M326 305c5-2 11-2 16 0" fill="none" stroke="#7e2b34" stroke-width="1.2"/>
+  <path d="M328 311c4 1.5 8 1.5 12 0" fill="none" stroke="#e8a39a" stroke-width="1.1" opacity=".75"/>
+
+  <path d="M372 286c-4 18-14 32-28 40" fill="none" stroke="#a56050" stroke-width="4" opacity=".18" filter="url(#soft2)"/>
+  <path d="M329 258c2 8 1 15-1 21" fill="none" stroke="#f7d8c0" stroke-width="1.6" opacity=".35"/>
+  <path d="M338 337c-8 3-18 2-25-2" fill="none" stroke="#b77861" stroke-width="1.4" opacity=".45"/>
+
+  <!-- hair falling in front -->
+  <path d="M272 156c-26 32-34 80-25 126 6 34 18 62 12 100-6 38-20 68-30 100 25-17 48-52 54-98 6-46-10-84-4-126 4-28 12-52 22-68Z" fill="url(#hair)"/>
+  <path d="M372 158c24 22 32 58 25 96-6 38-20 64-14 108 6 44 17 84 23 126-25-25-44-69-48-115-4-46 10-80 6-114-4-32-2-66 8-96Z" fill="url(#hair)"/>
+  <path d="M280 190c-12 40-8 78-2 110" fill="none" stroke="#8f5b3f" stroke-width="2" opacity=".45"/>
+  <path d="M376 196c10 36 6 72 2 104" fill="none" stroke="#8f5b3f" stroke-width="1.8" opacity=".38"/>
+
+  <!-- earrings -->
+  <g fill="url(#gold)" stroke="#7d5722" stroke-width=".6">
+    <circle cx="258" cy="277" r="2.6"/>
+    <path d="M252 280h12l-2 6h-8Z"/>
+    <path d="M250 288c0 8 4 13 8 13s8-5 8-13Z"/>
+    <circle cx="254" cy="303" r="1.8"/><circle cx="258" cy="306" r="1.8"/><circle cx="262" cy="303" r="1.8"/>
+    <circle cx="391" cy="273" r="2.6"/>
+    <path d="M385 276h12l-2 6h-8Z"/>
+    <path d="M383 284c0 8 4 13 8 13s8-5 8-13Z"/>
+    <circle cx="387" cy="299" r="1.8"/><circle cx="391" cy="302" r="1.8"/><circle cx="395" cy="299" r="1.8"/>
+  </g>
+
+  <!-- necklace -->
+  <path d="M292 366c6 18 18 28 34 28s30-10 36-28" fill="none" stroke="url(#gold)" stroke-width="2.4"/>
+  <path d="M296 382c8 16 18 24 30 24s24-8 32-24" fill="none" stroke="url(#goldDim)" stroke-width="5" stroke-dasharray="2 3" opacity=".9"/>
+  <path d="M320 404l8 10 8-10-8-6Z" fill="url(#gold)"/>
+  <circle cx="328" cy="422" r="3" fill="url(#goldDim)"/>
+
+  <!-- gold embroidery on the pallu -->
+  <g fill="none" stroke="url(#gold)" stroke-width="1.15" opacity=".9">
+    <g transform="translate(352 472) scale(1.0)"><circle r="2.8" fill="url(#gold)" stroke="none"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(60)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(120)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(180)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(240)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(300)"/></g>
+    <g transform="translate(382 538) scale(1.05)"><circle r="2.8" fill="url(#gold)" stroke="none"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(60)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(120)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(180)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(240)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(300)"/></g>
+    <g transform="translate(424 620) scale(1.0)"><circle r="2.8" fill="url(#gold)" stroke="none"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(60)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(120)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(180)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(240)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(300)"/></g>
+    <g transform="translate(200 510) scale(0.85)"><circle r="2.8" fill="url(#gold)" stroke="none"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(60)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(120)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(180)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(240)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(300)"/></g>
+    <g transform="translate(160 614) scale(0.85)"><circle r="2.8" fill="url(#gold)" stroke="none"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(60)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(120)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(180)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(240)"/><path d="M0-11C4-6 4-3 0 0-4-3-4-6 0-11Z" transform="rotate(300)"/></g>
+  </g>
+
+  <!-- sari border at the bottom -->
+  <path d="M0 726c86-12 160-38 226-76 34-20 58-38 80-58" fill="none" stroke="url(#gold)" stroke-width="3" opacity=".55"/>
+  <path d="M0 742c86-12 160-38 226-76 34-20 58-38 80-58" fill="none" stroke="url(#goldDim)" stroke-width="1" opacity=".5"/>
+
+  <!-- temple arch frame -->
+  <path d="M18 742V272c0-118 94-202 282-202s282 84 282 202v470" fill="none" stroke="url(#gold)" stroke-width="1.6" opacity=".65"/>
+  <path d="M30 742V276c0-110 88-192 270-192s270 82 270 192v466" fill="none" stroke="#c9a15c" stroke-width=".7" opacity=".35"/>
+  <g fill="url(#gold)" opacity=".8">
+    <path d="M52 300c10-18 26-18 36 0-10-4-26-4-36 0Z"/>
+    <path d="M548 300c-10-18-26-18-36 0 10-4 26-4 36 0Z"/>
+    <circle cx="70" cy="318" r="1.6"/><circle cx="530" cy="318" r="1.6"/>
+  </g>
+
+  <!-- foreground bokeh -->
+  <g fill="#f6d9a0">
+    <circle cx="86" cy="660" r="4" opacity=".28" filter="url(#soft2)"/>
+    <circle cx="120" cy="700" r="7" opacity=".18" filter="url(#soft2)"/>
+    <circle cx="506" cy="594" r="5" opacity=".22" filter="url(#soft2)"/>
+    <circle cx="540" cy="650" r="9" opacity=".12" filter="url(#soft2)"/>
+    <circle cx="420" cy="80" r="4" opacity=".5" filter="url(#soft2)"/>
+    <circle cx="168" cy="80" r="3" opacity=".4" filter="url(#soft2)"/>
+  </g>
+  <rect width="600" height="760" fill="url(#sky)" opacity=".06"/>
+</svg>
